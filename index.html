@@ -68,6 +68,39 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-第四节：Scala-基础数据类型" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/11/第四节：Scala-基础数据类型/" class="article-date">
+  <time datetime="2017-04-10T16:18:12.263Z" itemprop="datePublished">2017-04-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Byte	8位有符号补码整数。数值区间为 -128 到 127</div><div class="line">Short	16位有符号补码整数。数值区间为 -32768 到 32767</div><div class="line">Int	32位有符号补码整数。数值区间为 -2147483648 到 2147483647</div><div class="line">Long	64位有符号补码整数。数值区间为 -9223372036854775808 到 9223372036854775807</div><div class="line">Float	32位IEEE754单精度浮点数</div><div class="line">Double	64位IEEE754单精度浮点数</div><div class="line">Char	16位无符号Unicode字符, 区间值为 U+0000 到 U+FFFF</div><div class="line">String	字符序列</div><div class="line">Boolean	true或false</div></pre></td></tr></table></figure>
+<p>可以看出 scala 与java 中的类型基本上是一一对应的，不同的是 scala 中的字符类型首字母都是大写</p>
+<h2 id="定义整数"><a href="#定义整数" class="headerlink" title="定义整数"></a>定义整数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 16进制</div><div class="line">scala&gt; var x=0x29</div><div class="line">x: Int = 41</div><div class="line">//10进制</div><div class="line">scala&gt; var x=41</div><div class="line">x: Int = 41</div><div class="line">对于8进制 scala新的版本已经不支持了</div></pre></td></tr></table></figure>
+<h2 id="定义浮点类型数据"><a href="#定义浮点类型数据" class="headerlink" title="定义浮点类型数据"></a>定义浮点类型数据</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// 定义double类型数据 直接写浮点数就ok</div><div class="line">var fnum =3.141592</div><div class="line">fnum: Double = 3.141592</div><div class="line"></div><div class="line">//定义浮点类型数据 在浮点类型数据后跟F 或者f</div><div class="line">scala&gt; var fnum =3.141592f</div><div class="line">fnum: Float = 3.141592</div><div class="line"></div><div class="line">scala&gt; var fnum =3.141592F</div><div class="line">fnum: Float = 3.141592</div></pre></td></tr></table></figure>
+<h2 id="定义字符"><a href="#定义字符" class="headerlink" title="定义字符"></a>定义字符</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//字符用&apos; 包裹</div><div class="line">scala&gt; var x=&apos;a&apos;</div><div class="line">x: Char = a</div></pre></td></tr></table></figure>
+<h2 id="定义字符串"><a href="#定义字符串" class="headerlink" title="定义字符串"></a>定义字符串</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">字符串用&quot; 包裹</div><div class="line">scala&gt; var name=&quot;erhuan&quot;</div><div class="line">name: String = erhuan</div></pre></td></tr></table></figure>
+<h2 id="定义布尔类型"><a href="#定义布尔类型" class="headerlink" title="定义布尔类型"></a>定义布尔类型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">scala&gt; var win =true</div><div class="line">win: Boolean = true</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://argusdeng.github.io/name.guthub.io/2017/04/11/第四节：Scala-基础数据类型/" data-id="cj1cd3062000a3gujser4efeh" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-第一节：scala简介" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/04/11/第一节：scala简介/" class="article-date">
@@ -94,40 +127,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.guthub.io/2017/04/11/第一节：scala简介/" data-id="cj1ccx93x000284ujkbrd5eix" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-第四节：Scala-基础数据类型" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/04/11/第四节：Scala-基础数据类型/" class="article-date">
-  <time datetime="2017-04-10T16:18:12.263Z" itemprop="datePublished">2017-04-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Byte	8位有符号补码整数。数值区间为 -128 到 127</div><div class="line">Short	16位有符号补码整数。数值区间为 -32768 到 32767</div><div class="line">Int	32位有符号补码整数。数值区间为 -2147483648 到 2147483647</div><div class="line">Long	64位有符号补码整数。数值区间为 -9223372036854775808 到 9223372036854775807</div><div class="line">Float	32位IEEE754单精度浮点数</div><div class="line">Double	64位IEEE754单精度浮点数</div><div class="line">Char	16位无符号Unicode字符, 区间值为 U+0000 到 U+FFFF</div><div class="line">String	字符序列</div><div class="line">Boolean	true或false</div></pre></td></tr></table></figure>
-<p>可以看出 scala 与java 中的类型基本上是一一对应的，不同的是 scala 中的字符类型首字母都是大写</p>
-<h2 id="定义整数"><a href="#定义整数" class="headerlink" title="定义整数"></a>定义整数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 16进制</div><div class="line">scala&gt; var x=0x29</div><div class="line">x: Int = 41</div><div class="line">//10进制</div><div class="line">scala&gt; var x=41</div><div class="line">x: Int = 41</div><div class="line">对于8进制 scala新的版本已经不支持了</div></pre></td></tr></table></figure>
-<h2 id="定义浮点类型数据"><a href="#定义浮点类型数据" class="headerlink" title="定义浮点类型数据"></a>定义浮点类型数据</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// 定义double类型数据 直接写浮点数就ok</div><div class="line">var fnum =3.141592</div><div class="line">fnum: Double = 3.141592</div><div class="line"></div><div class="line">//定义浮点类型数据 在浮点类型数据后跟F 或者f</div><div class="line">scala&gt; var fnum =3.141592f</div><div class="line">fnum: Float = 3.141592</div><div class="line"></div><div class="line">scala&gt; var fnum =3.141592F</div><div class="line">fnum: Float = 3.141592</div></pre></td></tr></table></figure>
-<h2 id="定义字符"><a href="#定义字符" class="headerlink" title="定义字符"></a>定义字符</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//字符用&apos; 包裹</div><div class="line">scala&gt; var x=&apos;a&apos;</div><div class="line">x: Char = a</div></pre></td></tr></table></figure>
-<h2 id="定义字符串"><a href="#定义字符串" class="headerlink" title="定义字符串"></a>定义字符串</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">字符串用&quot; 包裹</div><div class="line">scala&gt; var name=&quot;erhuan&quot;</div><div class="line">name: String = erhuan</div></pre></td></tr></table></figure>
-<h2 id="定义布尔类型"><a href="#定义布尔类型" class="headerlink" title="定义布尔类型"></a>定义布尔类型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">scala&gt; var win =true</div><div class="line">win: Boolean = true</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.guthub.io/2017/04/11/第四节：Scala-基础数据类型/" data-id="cj1ccx94d000984ujgmhr9bx6" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.guthub.io/2017/04/11/第一节：scala简介/" data-id="cj1cd305g00023gujk1p3t2uh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -159,7 +159,37 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.guthub.io/2017/04/11/第八节：Array的遍历-转换以及-常规用法/" data-id="cj1ccx94d000884ujbebpn03s" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.guthub.io/2017/04/11/第八节：Array的遍历-转换以及-常规用法/" data-id="cj1cd306200083gujfb5zjd99" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-第五节：Scala-基本运算" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/11/第五节：Scala-基本运算/" class="article-date">
+  <time datetime="2017-04-10T16:18:12.263Z" itemprop="datePublished">2017-04-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="算术操作（-）"><a href="#算术操作（-）" class="headerlink" title="算术操作（+-*/）"></a>算术操作（+-*/）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">//加法</div><div class="line">scala&gt; var sum =1+2</div><div class="line">sum: Int = 3</div><div class="line"></div><div class="line">// 加法 第二个参数为Long 返回值为Long</div><div class="line">scala&gt; var sum =1+2l</div><div class="line">sum: Long = 3</div><div class="line"></div><div class="line">// 减法 </div><div class="line">scala&gt; 1-2</div><div class="line">res2: Int = -1</div><div class="line"></div><div class="line">// 负数 操作</div><div class="line">scala&gt; 1+ -1</div><div class="line">res3: Int = 0</div><div class="line"></div><div class="line">// 乘法</div><div class="line">scala&gt; 1*2</div><div class="line">res4: Int = 2</div><div class="line"></div><div class="line">//乘法 第二个参数为Long  返回值为Long</div><div class="line">scala&gt; 1*2l</div><div class="line">res5: Long = 2</div><div class="line"></div><div class="line">// 除法</div><div class="line">scala&gt; 1/3</div><div class="line">res0: Int = 0</div><div class="line"></div><div class="line">// 取模</div><div class="line">scala&gt; 1%3</div><div class="line">res1: Int = 1</div></pre></td></tr></table></figure>
+<h2 id="关系操作"><a href="#关系操作" class="headerlink" title="关系操作"></a>关系操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">scala&gt; 1&gt;2</div><div class="line">res6: Boolean = false</div><div class="line"></div><div class="line">scala&gt; 1&lt;2</div><div class="line">res7: Boolean = true</div><div class="line"></div><div class="line">scala&gt; 1!=2</div><div class="line">res8: Boolean = true</div><div class="line"></div><div class="line">scala&gt; 1&gt;=2</div><div class="line">res9: Boolean = false</div><div class="line"></div><div class="line">scala&gt; 1&lt;=2</div><div class="line">res10: Boolean = true</div></pre></td></tr></table></figure>
+<h2 id="逻辑操作"><a href="#逻辑操作" class="headerlink" title="逻辑操作"></a>逻辑操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">scala&gt; var win=true</div><div class="line">win: Boolean = true</div><div class="line"></div><div class="line">//逻辑与</div><div class="line">scala&gt; win &amp;&amp;win</div><div class="line">res11: Boolean = true</div><div class="line">逻辑或</div><div class="line">scala&gt; win || win</div><div class="line">res12: Boolean = true</div><div class="line"></div><div class="line">scala&gt; win &amp;&amp; !win</div><div class="line">res14: Boolean = false</div></pre></td></tr></table></figure>
+<h2 id="对象比较"><a href="#对象比较" class="headerlink" title="对象比较"></a>对象比较</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">scala&gt; var name=&quot;erhuan&quot;</div><div class="line">name: String = erhuan</div><div class="line"></div><div class="line">scala&gt; var passd=&quot;erhuan&quot;</div><div class="line">passd: String = erhuan</div><div class="line"></div><div class="line">//scala 中比较的是内容 并非引用</div><div class="line">scala&gt; name == passd</div><div class="line">res15: Boolean = true</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://argusdeng.github.io/name.guthub.io/2017/04/11/第五节：Scala-基本运算/" data-id="cj1cd305z00073guj49ukh7sv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -199,37 +229,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.guthub.io/2017/04/11/第二节：环境安装配置/" data-id="cj1ccx93x000684uj7ts7dyuc" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-第五节：Scala-基本运算" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/04/11/第五节：Scala-基本运算/" class="article-date">
-  <time datetime="2017-04-10T16:18:12.263Z" itemprop="datePublished">2017-04-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="算术操作（-）"><a href="#算术操作（-）" class="headerlink" title="算术操作（+-*/）"></a>算术操作（+-*/）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">//加法</div><div class="line">scala&gt; var sum =1+2</div><div class="line">sum: Int = 3</div><div class="line"></div><div class="line">// 加法 第二个参数为Long 返回值为Long</div><div class="line">scala&gt; var sum =1+2l</div><div class="line">sum: Long = 3</div><div class="line"></div><div class="line">// 减法 </div><div class="line">scala&gt; 1-2</div><div class="line">res2: Int = -1</div><div class="line"></div><div class="line">// 负数 操作</div><div class="line">scala&gt; 1+ -1</div><div class="line">res3: Int = 0</div><div class="line"></div><div class="line">// 乘法</div><div class="line">scala&gt; 1*2</div><div class="line">res4: Int = 2</div><div class="line"></div><div class="line">//乘法 第二个参数为Long  返回值为Long</div><div class="line">scala&gt; 1*2l</div><div class="line">res5: Long = 2</div><div class="line"></div><div class="line">// 除法</div><div class="line">scala&gt; 1/3</div><div class="line">res0: Int = 0</div><div class="line"></div><div class="line">// 取模</div><div class="line">scala&gt; 1%3</div><div class="line">res1: Int = 1</div></pre></td></tr></table></figure>
-<h2 id="关系操作"><a href="#关系操作" class="headerlink" title="关系操作"></a>关系操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">scala&gt; 1&gt;2</div><div class="line">res6: Boolean = false</div><div class="line"></div><div class="line">scala&gt; 1&lt;2</div><div class="line">res7: Boolean = true</div><div class="line"></div><div class="line">scala&gt; 1!=2</div><div class="line">res8: Boolean = true</div><div class="line"></div><div class="line">scala&gt; 1&gt;=2</div><div class="line">res9: Boolean = false</div><div class="line"></div><div class="line">scala&gt; 1&lt;=2</div><div class="line">res10: Boolean = true</div></pre></td></tr></table></figure>
-<h2 id="逻辑操作"><a href="#逻辑操作" class="headerlink" title="逻辑操作"></a>逻辑操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">scala&gt; var win=true</div><div class="line">win: Boolean = true</div><div class="line"></div><div class="line">//逻辑与</div><div class="line">scala&gt; win &amp;&amp;win</div><div class="line">res11: Boolean = true</div><div class="line">逻辑或</div><div class="line">scala&gt; win || win</div><div class="line">res12: Boolean = true</div><div class="line"></div><div class="line">scala&gt; win &amp;&amp; !win</div><div class="line">res14: Boolean = false</div></pre></td></tr></table></figure>
-<h2 id="对象比较"><a href="#对象比较" class="headerlink" title="对象比较"></a>对象比较</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">scala&gt; var name=&quot;erhuan&quot;</div><div class="line">name: String = erhuan</div><div class="line"></div><div class="line">scala&gt; var passd=&quot;erhuan&quot;</div><div class="line">passd: String = erhuan</div><div class="line"></div><div class="line">//scala 中比较的是内容 并非引用</div><div class="line">scala&gt; name == passd</div><div class="line">res15: Boolean = true</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.guthub.io/2017/04/11/第五节：Scala-基本运算/" data-id="cj1ccx93x000784ujqklxm4ui" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.guthub.io/2017/04/11/第二节：环境安装配置/" data-id="cj1cd305w00063guj1q4bd6ma" class="article-share-link">Share</a>
       
       
     </footer>
@@ -272,7 +272,7 @@ object Test {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.guthub.io/2017/04/11/第三节：scala-基础语法/" data-id="cj1ccx93x000584uj8swgjr5t" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.guthub.io/2017/04/11/第三节：scala-基础语法/" data-id="cj1cd305g00053gujjpcc3yc4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -304,7 +304,7 @@ object Test {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.guthub.io/2017/04/11/第七节：定长与变长Array/" data-id="cj1ccx93x000384ujjtfruqqs" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.guthub.io/2017/04/11/第七节：定长与变长Array/" data-id="cj1cd305g00043guj87vq881b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -335,7 +335,7 @@ object Test {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.guthub.io/2017/04/11/第六节：判断与循环/" data-id="cj1ccx94d000a84ujxdehs1k9" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.guthub.io/2017/04/11/第六节：判断与循环/" data-id="cj1cd306200093gujs1sqd7sz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -369,7 +369,7 @@ object Test {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.guthub.io/2017/04/11/第九节：List-以及常规用法/" data-id="cj1ccx93x000484uj3o8rley2" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.guthub.io/2017/04/11/第九节：List-以及常规用法/" data-id="cj1cd305g00033guj4h5eu62z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -405,7 +405,7 @@ object Test {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.guthub.io/2017/04/11/aaa/" data-id="cj1ccx93h000184uje65rrjae" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.guthub.io/2017/04/11/aaa/" data-id="cj1cd305g00013guju84zj9jx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -449,11 +449,11 @@ object Test {
       <ul>
         
           <li>
-            <a href="/2017/04/11/第一节：scala简介/">(no title)</a>
+            <a href="/2017/04/11/第四节：Scala-基础数据类型/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2017/04/11/第四节：Scala-基础数据类型/">(no title)</a>
+            <a href="/2017/04/11/第一节：scala简介/">(no title)</a>
           </li>
         
           <li>
@@ -461,11 +461,11 @@ object Test {
           </li>
         
           <li>
-            <a href="/2017/04/11/第二节：环境安装配置/">(no title)</a>
+            <a href="/2017/04/11/第五节：Scala-基本运算/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2017/04/11/第五节：Scala-基本运算/">(no title)</a>
+            <a href="/2017/04/11/第二节：环境安装配置/">(no title)</a>
           </li>
         
       </ul>

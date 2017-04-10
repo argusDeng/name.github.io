@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="定义变量123456scala&amp;gt; var hellowvar=&amp;quot;hellowvar&amp;quot;hellowvar: String = hellowvar//重新赋值scala&amp;gt;  helloString=&amp;quot;second var&amp;quot;hellowvar: String = second var  写过js的我发现 var 这块又被用上了  定义常量1234567">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2017/04/11/第三节：scala-基础语法/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="定义变量123456scala&amp;gt; var hellowvar=&amp;quot;hellowvar&amp;quot;hellowvar: String = hellowvar//重新赋值scala&amp;gt;  helloString=&amp;quot;second var&amp;quot;hellowvar: String = second var  写过js的我发现 var 这块又被用上了  定义常量1234567">
+<meta property="og:updated_time" content="2017-04-10T16:17:22.996Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="定义变量123456scala&amp;gt; var hellowvar=&amp;quot;hellowvar&amp;quot;hellowvar: String = hellowvar//重新赋值scala&amp;gt;  helloString=&amp;quot;second var&amp;quot;hellowvar: String = second var  写过js的我发现 var 这块又被用上了  定义常量1234567">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-第三节：scala-基础语法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/11/第三节：scala-基础语法/" class="article-date">
+  <time datetime="2017-04-10T16:18:12.262Z" itemprop="datePublished">2017-04-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="定义变量"><a href="#定义变量" class="headerlink" title="定义变量"></a>定义变量</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">scala&gt; var hellowvar=&quot;hellowvar&quot;</div><div class="line">hellowvar: String = hellowvar</div><div class="line"></div><div class="line">//重新赋值</div><div class="line">scala&gt;  helloString=&quot;second var&quot;</div><div class="line">hellowvar: String = second var</div></pre></td></tr></table></figure>
+<blockquote>
+<p>写过js的我发现 var 这块又被用上了</p>
+</blockquote>
+<h2 id="定义常量"><a href="#定义常量" class="headerlink" title="定义常量"></a>定义常量</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">scala&gt;val name=&quot;huan&quot;</div><div class="line">name: String = huan</div><div class="line"></div><div class="line">//不能被重新赋值，因为它是常量</div><div class="line">scala&gt; name=&quot;lilin&quot;</div><div class="line">&lt;console&gt;:12: error: reassignment to val</div><div class="line">       name=&quot;lilin&quot;</div><div class="line">           ^</div></pre></td></tr></table></figure>
+<h2 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// lazy 关键字 声明常量 表示 该常量只有在 使用的时候才会被赋值</div><div class="line">scala&gt; lazy val passd=&quot;123&quot;</div><div class="line">passd: String = &lt;lazy&gt;</div><div class="line"></div><div class="line">scala&gt; passd</div><div class="line">res1: String = 123</div><div class="line">// 变量不可使用懒加载</div></pre></td></tr></table></figure>
+<h2 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">// scala  定义函数示意</div><div class="line">def  add(x:Int,yInt):Int=&#123; </div><div class="line">     return x+y</div><div class="line">&#125;</div><div class="line"></div><div class="line">/**</div><div class="line">* def 定义一个函数</div><div class="line">*add 函数名</div><div class="line">* x:Int,y:Int 形参</div><div class="line">* Int 返回值类型</div><div class="line">* return x+y  函数体</div><div class="line">*/</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">scala&gt; def add (x:Int,y:Int) : Int=&#123;return x+y&#125;</div><div class="line">add: (x: Int, y: Int)Int</div><div class="line"></div><div class="line">//调用函数</div><div class="line">scala&gt; add(1,2)</div><div class="line">res4: Int = 3</div><div class="line"></div><div class="line"></div><div class="line">// scala 可以省略return 然后将最后一个语句执行结果作为返回</div><div class="line"></div><div class="line">scala&gt; def add(x:Int,y:Int):Int=&#123;x+y&#125;</div><div class="line">add: (x: Int, y: Int)Int</div><div class="line"></div><div class="line">scala&gt; add(1,2)</div><div class="line">res0: Int = 3</div><div class="line"></div><div class="line">// 返回类型也可以省略，Scala 会自己计算返回值类型</div><div class="line">scala&gt; def add(x:Int,y:Int)=&#123;x+y&#125;</div><div class="line">add: (x: Int, y: Int)Int</div><div class="line"></div><div class="line">scala&gt; add(1,4)</div><div class="line">res1: Int = 5</div></pre></td></tr></table></figure>
+<h2 id="hello-scala-程序"><a href="#hello-scala-程序" class="headerlink" title="hello  scala 程序"></a>hello  scala 程序</h2><pre><code>package scala
+object Test {
+  // scala  同样以main 函数开始
+  def main(args: Array[String]):Unit= {
+          //Unit 相当于  java中的void 表示没有返回值
+        var namses:String=&quot;hello sala&quot;;
+        println(namses);
+  }
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/11/第三节：scala-基础语法/" data-id="cj1cc38bg0003ggujf16tgn46" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/04/11/第七节：定长与变长Array/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/11/第八节：Array的遍历-转换以及-常规用法/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/04/11/第二节：环境安装配置/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/11/第一节：scala简介/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/11/第四节：Scala-基础数据类型/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/11/第五节：Scala-基本运算/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/11/第八节：Array的遍历-转换以及-常规用法/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

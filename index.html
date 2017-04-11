@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>inerdstack</title>
+  <title>Argus</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="start from zero">
+  <meta name="description" content="frome zone">
 <meta property="og:type" content="website">
-<meta property="og:title" content="inerdstack">
+<meta property="og:title" content="Argus">
 <meta property="og:url" content="https://argusdeng.github.io/name.github.io/index.html">
-<meta property="og:site_name" content="inerdstack">
-<meta property="og:description" content="start from zero">
+<meta property="og:site_name" content="Argus">
+<meta property="og:description" content="frome zone">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="inerdstack">
-<meta name="twitter:description" content="start from zero">
+<meta name="twitter:title" content="Argus">
+<meta name="twitter:description" content="frome zone">
   
-    <link rel="alternate" href="/atom.xml" title="inerdstack" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Argus" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -36,11 +36,11 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/name.github.io/" id="logo">inerdstack</a>
+        <a href="/name.github.io/" id="logo">Argus</a>
       </h1>
       
         <h2 id="subtitle-wrap">
-          <a href="/name.github.io/" id="subtitle">the stack of it nerds</a>
+          <a href="/name.github.io/" id="subtitle">become hero</a>
         </h2>
       
     </div>
@@ -68,74 +68,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-第八节：Array的遍历-转换以及-常规用法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/name.github.io/2017/04/11/第八节：Array的遍历-转换以及-常规用法/" class="article-date">
-  <time datetime="2017-04-10T16:18:12.263Z" itemprop="datePublished">2017-04-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">scala&gt; var intArray=Array(1,2,3)</div><div class="line">intArray: Array[Int] = Array(1, 2, 3)</div><div class="line"></div><div class="line">// to  length-1</div><div class="line">scala&gt; for(i&lt;- 0 to intArray.length-1)&#123;println(intArray(i))&#125;</div><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">// until  小于length</div><div class="line">scala&gt; for(i&lt;- 0 until intArray.length)&#123;println(intArray(i))&#125;</div><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">// 正确遍历数组的姿势</div><div class="line">scala&gt; for(i&lt;- intArray)&#123;println(i)&#125;</div><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">//倒叙遍历</div><div class="line">scala&gt; for(i&lt;- (0 until intArray.length).reverse)&#123;println(intArray(i))&#125;</div><div class="line"></div><div class="line">3</div><div class="line">2</div><div class="line">1</div></pre></td></tr></table></figure>
-<h2 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h2><blockquote>
-<p>Scala 中 for 循环是有返回值的。 for 循环中的 yield 会把当前的元素记下来，保存在集合中，循环结束后将返回该集合。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//  生成新的数组原数组不变  </div><div class="line">scala&gt; var intArray=Array(1,2,3)</div><div class="line">intArray: Array[Int] = Array(1, 2, 3)</div><div class="line"></div><div class="line">scala&gt; for(i&lt;-intArray) yield i*2</div><div class="line">res6: Array[Int] = Array(2, 4, 6)</div><div class="line"></div><div class="line">scala&gt; intArray</div><div class="line">res7: Array[Int] = Array(1, 2, 3)</div><div class="line"></div><div class="line">scala&gt; var intArray2=for(i&lt;-intArray) yield i*2</div><div class="line">intArray2: Array[Int] = Array(2, 4, 6)</div><div class="line">// 加入过滤条件</div><div class="line">scala&gt; var intArray2=for(i&lt;-intArray if i&gt;2) yield i*2</div><div class="line">intArray2: Array[Int] = Array(6)</div></pre></td></tr></table></figure>
-<h2 id="常规用法"><a href="#常规用法" class="headerlink" title="常规用法"></a>常规用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//求和</div><div class="line">scala&gt; intArray.sum</div><div class="line">res8: Int = 6</div><div class="line">//求最小值</div><div class="line">scala&gt; intArray.min</div><div class="line">res9: Int = 1</div><div class="line">//求最大值</div><div class="line">scala&gt; intArray.max</div><div class="line">res10: Int = 3</div><div class="line">// make String</div><div class="line">scala&gt; intArray.mkString(&quot;,&quot;)</div><div class="line">res11: String = 1,2,3</div><div class="line">scala&gt; intArray.mkString(&quot;&lt;&quot;,&quot;,&quot;,&quot;&gt;&quot;)</div><div class="line">res12: String = &lt;1,2,3&gt;</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第八节：Array的遍历-转换以及-常规用法/" data-id="cj1cv1l2d000aysujn4pv8c3n" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-第一节：scala简介" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/name.github.io/2017/04/11/第一节：scala简介/" class="article-date">
-  <time datetime="2017-04-10T16:18:12.263Z" itemprop="datePublished">2017-04-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>工作之后发现，学习的动力从大学的为学习而学习变成了现在的因需而学。多数情况下是为了更好的解决问题，或者单纯的为解决问题！本节的内容属于了解性质的都是从网上抄的！！</p>
-</blockquote>
-<h2 id="Scala简介"><a href="#Scala简介" class="headerlink" title="Scala简介"></a>Scala简介</h2><p><a href="http://lib.csdn.net/base/scala" target="_blank" rel="external">Scala</a>(Scala Language的简称)语言是一种能够运行于JVM和.Net平台之上的通用编程语言，既可用于大规模应用程序开发，也可用于脚本编程，它由由Martin Odersk于2001开发，2004年开始程序运行在JVM与.Net平台之上，由于其简洁、优雅、类型安全的编程模式而受到关注。 </p>
-<h2 id="Scala是怎么火的"><a href="#Scala是怎么火的" class="headerlink" title="Scala是怎么火的"></a>Scala是怎么火的</h2><p>在Scala的创建之初，并没有怎么引起重视，随着<a href="http://lib.csdn.net/base/spark" target="_blank" rel="external">Apache Spark</a>和Apache Kafka这样基于Scala的<a href="http://lib.csdn.net/base/hadoop" target="_blank" rel="external">大数据</a>框架的崛起，Scala逐步映入大数据从业者的眼帘</p>
-<h2 id="Scala的特点"><a href="#Scala的特点" class="headerlink" title="Scala的特点"></a>Scala的特点</h2><p>Scala 是一门多范式（multi-paradigm）的编程语言，设计初衷是要集成面向对象编程和函数式编程的各种特性。<br>Scala 运行在Java虚拟机上，并兼容现有的Java程序。<br>Scala 源代码被编译成Java字节码，所以它可以运行于JVM之上，并可以调用现有的Java类库</p>
-<h2 id="我为啥学Scala"><a href="#我为啥学Scala" class="headerlink" title="我为啥学Scala"></a>我为啥学Scala</h2><ul>
-<li>为了学习Spark（<em>当然学习Spark不一定需要学习Scala</em>）</li>
-<li>提高代码的表达性（<em>换个方式说为了减少敲得代码数量，因为Scala看起来真的很简练</em>）</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第一节：scala简介/" data-id="cj1cv1l1x0002ysuj9bztyt8j" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-第四节：Scala-基础数据类型" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/name.github.io/2017/04/11/第四节：Scala-基础数据类型/" class="article-date">
@@ -159,47 +91,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第四节：Scala-基础数据类型/" data-id="cj1cv1l2d0009ysuj84qosboz" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-第二节：环境安装配置" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/name.github.io/2017/04/11/第二节：环境安装配置/" class="article-date">
-  <time datetime="2017-04-10T16:18:12.263Z" itemprop="datePublished">2017-04-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>Scala是基于java之上，大量使用java的类库和变量，使用Scala之前必须先安装。我使用的jdk1.8  Scala2.12.1</p>
-</blockquote>
-<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><ul>
-<li>安装jdk1.8 </li>
-<li>配置 PATH，JAVA_HOME,CLASSPATH </li>
-</ul>
-<h2 id="下载scala"><a href="#下载scala" class="headerlink" title="下载scala"></a>下载scala</h2><ul>
-<li><p>接下来，我们可以从 Scala 官网地址<a href="http://www.scala-lang.org/download/" target="_blank" rel="external">下载地址</a>下载安装包<br><img src="http://upload-images.jianshu.io/upload_images/2888418-450d3560a5c1c1fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="下载"></p>
-</li>
-<li><p>点至下载的安装包进行安装。安装完成后配置环境变量  SCALA_HOME  （SCALA安装根目录） 以及PATH （SCALA的bin目录）</p>
-</li>
-</ul>
-<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><p> 当你正确的完成上述的步骤后，调出cmd 窗口，输入scala 然后回车你会看到一下界面。<br><img src="http://upload-images.jianshu.io/upload_images/2888418-d23b61909e8475c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="验证环境变量"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第二节：环境安装配置/" data-id="cj1cv1l1x0006ysuj7gbu9smf" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第四节：Scala-基础数据类型/" data-id="cj1cv80h5000atgujeb9x89f2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -229,7 +121,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第五节：Scala-基本运算/" data-id="cj1cv1l1x0007ysuj877ipl9u" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第五节：Scala-基本运算/" data-id="cj1cv80gq0007tguj98rvfqdv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -272,39 +164,7 @@ object Test {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第三节：scala-基础语法/" data-id="cj1cv1l1x0004ysujpqfadl8h" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-第七节：定长与变长Array" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/name.github.io/2017/04/11/第七节：定长与变长Array/" class="article-date">
-  <time datetime="2017-04-10T16:18:12.261Z" itemprop="datePublished">2017-04-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="定长数组"><a href="#定长数组" class="headerlink" title="定长数组"></a>定长数组</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">//定义一个长为10 Int 类型数组</div><div class="line">scala&gt; var numArray = new Array[Int](10)</div><div class="line">numArray: Array[Int] = Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)</div><div class="line"></div><div class="line">//定义一个长为10 String 类型数组</div><div class="line">scala&gt; var strArray = new Array[String](10)</div><div class="line">strArray: Array[String] = Array(null, null, null, null, null, null, null, null, null, null)</div><div class="line"></div><div class="line">// 数组赋值</div><div class="line">scala&gt; numArray(0)=1</div><div class="line"></div><div class="line">scala&gt; numArray(11)=1</div><div class="line">java.lang.ArrayIndexOutOfBoundsException: 11</div><div class="line">  ... 29 elided</div><div class="line">//赋值报错</div><div class="line"></div><div class="line">scala&gt; numArray</div><div class="line">res8: Array[Int] = Array(1, 0, 0, 0, 0, 0, 0, 0, 0, 0)</div><div class="line">// 这说明 数组的长度不可变但是值是可变的</div><div class="line"></div><div class="line">// 定义数组的同时进行赋值</div><div class="line">scala&gt; var strArrayinit= Array(&quot;erhuan&quot;,&quot;nolimit&quot;)</div><div class="line">strArrayinit: Array[String] = Array(erhuan, nolimit)</div></pre></td></tr></table></figure>
-<h2 id="变长数组"><a href="#变长数组" class="headerlink" title="变长数组"></a>变长数组</h2><blockquote>
-<p>变长数组 需要导入scala.collection.mutable.ArrayBuffer</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">// 导入包</div><div class="line"> scala&gt; import scala.collection.mutable.ArrayBuffer</div><div class="line">import scala.collection.mutable.ArrayBuffer</div><div class="line"></div><div class="line">// 定义一个边长的Int 形Array</div><div class="line">scala&gt; var numArray = ArrayBuffer[Int]()</div><div class="line">numArray: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer()</div><div class="line"></div><div class="line">// 在0处插入1</div><div class="line">scala&gt; numArray.insert(0,1)</div><div class="line"></div><div class="line">scala&gt; numArray</div><div class="line">res14: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(1)</div><div class="line"></div><div class="line">// 在0处 插入 1，2，3</div><div class="line">scala&gt; numArray.insert(0,1,2,3)</div><div class="line"></div><div class="line">scala&gt; numArray</div><div class="line">res16: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(1, 2, 3, 1)</div><div class="line"></div><div class="line">//从0处开始  删除1和数</div><div class="line">scala&gt; numArray.remove(0,1)</div><div class="line"></div><div class="line">scala&gt; numArray</div><div class="line">res18: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(2, 3, 1)</div><div class="line"></div><div class="line">// 转成定长数组</div><div class="line">scala&gt; numArray.toArray</div><div class="line">res19: Array[Int] = Array(2, 3, 1)</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">// String 类型变长数组</div><div class="line">scala&gt; var strArray = ArrayBuffer[String]()</div><div class="line">strArray: scala.collection.mutable.ArrayBuffer[String] = ArrayBuffer()</div><div class="line"></div><div class="line">//末尾添加元素</div><div class="line">scala&gt; strArray+=&quot;erhuan&quot;</div><div class="line">res20: scala.collection.mutable.ArrayBuffer[String] = ArrayBuffer(erhuan)</div><div class="line"></div><div class="line">// 添加集合</div><div class="line">scala&gt; strArray+=(&quot;is&quot;,&quot;a&quot;,&quot;man&quot;)</div><div class="line">res21: scala.collection.mutable.ArrayBuffer[String] = ArrayBuffer(erhuan, is, a, man)</div><div class="line"></div><div class="line">//添加任意集合</div><div class="line">scala&gt; strArray++=Array(&quot;tall&quot;,&quot;1.8&quot;)</div><div class="line">res22: scala.collection.mutable.ArrayBuffer[String] = ArrayBuffer(erhuan, is, a, man, tall, 1.8)</div><div class="line"></div><div class="line">// 删掉末尾2个元素</div><div class="line">scala&gt; strArray.trimEnd(2)</div><div class="line">scala&gt; strArray</div><div class="line">res24: scala.collection.mutable.ArrayBuffer[String] = ArrayBuffer(erhuan, is, a, man)</div><div class="line"></div><div class="line">// 从1处开始删掉三个</div><div class="line">scala&gt; strArray.remove(1,3)</div><div class="line"></div><div class="line">scala&gt; strArray</div><div class="line">res27: scala.collection.mutable.ArrayBuffer[String] = ArrayBuffer(erhuan)</div><div class="line"></div><div class="line">// 转成定长</div><div class="line">scala&gt; strArray.toArray</div><div class="line">res25: Array[String] = Array(erhuan)</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第七节：定长与变长Array/" data-id="cj1cv1l1x0003ysujbelo05ua" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第三节：scala-基础语法/" data-id="cj1cv80gq0003tguj9zf25qcq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -335,7 +195,91 @@ object Test {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第六节：判断与循环/" data-id="cj1cv1l2d0008ysujbdyvpm4x" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第六节：判断与循环/" data-id="cj1cv80gq0008tgujsddtkxj1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-第七节：定长与变长Array" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/name.github.io/2017/04/11/第七节：定长与变长Array/" class="article-date">
+  <time datetime="2017-04-10T16:13:09.000Z" itemprop="datePublished">2017-04-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/name.github.io/2017/04/11/第七节：定长与变长Array/">第七节：定长与变长Array</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="定长数组"><a href="#定长数组" class="headerlink" title="定长数组"></a>定长数组</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">//定义一个长为10 Int 类型数组</div><div class="line">scala&gt; var numArray = new Array[Int](10)</div><div class="line">numArray: Array[Int] = Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)</div><div class="line"></div><div class="line">//定义一个长为10 String 类型数组</div><div class="line">scala&gt; var strArray = new Array[String](10)</div><div class="line">strArray: Array[String] = Array(null, null, null, null, null, null, null, null, null, null)</div><div class="line"></div><div class="line">// 数组赋值</div><div class="line">scala&gt; numArray(0)=1</div><div class="line"></div><div class="line">scala&gt; numArray(11)=1</div><div class="line">java.lang.ArrayIndexOutOfBoundsException: 11</div><div class="line">  ... 29 elided</div><div class="line">//赋值报错</div><div class="line"></div><div class="line">scala&gt; numArray</div><div class="line">res8: Array[Int] = Array(1, 0, 0, 0, 0, 0, 0, 0, 0, 0)</div><div class="line">// 这说明 数组的长度不可变但是值是可变的</div><div class="line"></div><div class="line">// 定义数组的同时进行赋值</div><div class="line">scala&gt; var strArrayinit= Array(&quot;erhuan&quot;,&quot;nolimit&quot;)</div><div class="line">strArrayinit: Array[String] = Array(erhuan, nolimit)</div></pre></td></tr></table></figure>
+<h2 id="变长数组"><a href="#变长数组" class="headerlink" title="变长数组"></a>变长数组</h2><blockquote>
+<p>变长数组 需要导入scala.collection.mutable.ArrayBuffer</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">// 导入包</div><div class="line"> scala&gt; import scala.collection.mutable.ArrayBuffer</div><div class="line">import scala.collection.mutable.ArrayBuffer</div><div class="line"></div><div class="line">// 定义一个边长的Int 形Array</div><div class="line">scala&gt; var numArray = ArrayBuffer[Int]()</div><div class="line">numArray: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer()</div><div class="line"></div><div class="line">// 在0处插入1</div><div class="line">scala&gt; numArray.insert(0,1)</div><div class="line"></div><div class="line">scala&gt; numArray</div><div class="line">res14: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(1)</div><div class="line"></div><div class="line">// 在0处 插入 1，2，3</div><div class="line">scala&gt; numArray.insert(0,1,2,3)</div><div class="line"></div><div class="line">scala&gt; numArray</div><div class="line">res16: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(1, 2, 3, 1)</div><div class="line"></div><div class="line">//从0处开始  删除1和数</div><div class="line">scala&gt; numArray.remove(0,1)</div><div class="line"></div><div class="line">scala&gt; numArray</div><div class="line">res18: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(2, 3, 1)</div><div class="line"></div><div class="line">// 转成定长数组</div><div class="line">scala&gt; numArray.toArray</div><div class="line">res19: Array[Int] = Array(2, 3, 1)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">// String 类型变长数组</div><div class="line">scala&gt; var strArray = ArrayBuffer[String]()</div><div class="line">strArray: scala.collection.mutable.ArrayBuffer[String] = ArrayBuffer()</div><div class="line"></div><div class="line">//末尾添加元素</div><div class="line">scala&gt; strArray+=&quot;erhuan&quot;</div><div class="line">res20: scala.collection.mutable.ArrayBuffer[String] = ArrayBuffer(erhuan)</div><div class="line"></div><div class="line">// 添加集合</div><div class="line">scala&gt; strArray+=(&quot;is&quot;,&quot;a&quot;,&quot;man&quot;)</div><div class="line">res21: scala.collection.mutable.ArrayBuffer[String] = ArrayBuffer(erhuan, is, a, man)</div><div class="line"></div><div class="line">//添加任意集合</div><div class="line">scala&gt; strArray++=Array(&quot;tall&quot;,&quot;1.8&quot;)</div><div class="line">res22: scala.collection.mutable.ArrayBuffer[String] = ArrayBuffer(erhuan, is, a, man, tall, 1.8)</div><div class="line"></div><div class="line">// 删掉末尾2个元素</div><div class="line">scala&gt; strArray.trimEnd(2)</div><div class="line">scala&gt; strArray</div><div class="line">res24: scala.collection.mutable.ArrayBuffer[String] = ArrayBuffer(erhuan, is, a, man)</div><div class="line"></div><div class="line">// 从1处开始删掉三个</div><div class="line">scala&gt; strArray.remove(1,3)</div><div class="line"></div><div class="line">scala&gt; strArray</div><div class="line">res27: scala.collection.mutable.ArrayBuffer[String] = ArrayBuffer(erhuan)</div><div class="line"></div><div class="line">// 转成定长</div><div class="line">scala&gt; strArray.toArray</div><div class="line">res25: Array[String] = Array(erhuan)</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第七节：定长与变长Array/" data-id="cj1cv80gq0004tgujf63eag08" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-第八节：Array的遍历-转换以及-常规用法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/name.github.io/2017/04/11/第八节：Array的遍历-转换以及-常规用法/" class="article-date">
+  <time datetime="2017-04-10T16:13:09.000Z" itemprop="datePublished">2017-04-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/name.github.io/2017/04/11/第八节：Array的遍历-转换以及-常规用法/">第八节：Array的遍历-转换以及-常规用法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">scala&gt; var intArray=Array(1,2,3)</div><div class="line">intArray: Array[Int] = Array(1, 2, 3)</div><div class="line"></div><div class="line">// to  length-1</div><div class="line">scala&gt; for(i&lt;- 0 to intArray.length-1)&#123;println(intArray(i))&#125;</div><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">// until  小于length</div><div class="line">scala&gt; for(i&lt;- 0 until intArray.length)&#123;println(intArray(i))&#125;</div><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">// 正确遍历数组的姿势</div><div class="line">scala&gt; for(i&lt;- intArray)&#123;println(i)&#125;</div><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">//倒叙遍历</div><div class="line">scala&gt; for(i&lt;- (0 until intArray.length).reverse)&#123;println(intArray(i))&#125;</div><div class="line"></div><div class="line">3</div><div class="line">2</div><div class="line">1</div></pre></td></tr></table></figure>
+<h2 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h2><blockquote>
+<p>Scala 中 for 循环是有返回值的。 for 循环中的 yield 会把当前的元素记下来，保存在集合中，循环结束后将返回该集合。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//  生成新的数组原数组不变  </div><div class="line">scala&gt; var intArray=Array(1,2,3)</div><div class="line">intArray: Array[Int] = Array(1, 2, 3)</div><div class="line"></div><div class="line">scala&gt; for(i&lt;-intArray) yield i*2</div><div class="line">res6: Array[Int] = Array(2, 4, 6)</div><div class="line"></div><div class="line">scala&gt; intArray</div><div class="line">res7: Array[Int] = Array(1, 2, 3)</div><div class="line"></div><div class="line">scala&gt; var intArray2=for(i&lt;-intArray) yield i*2</div><div class="line">intArray2: Array[Int] = Array(2, 4, 6)</div><div class="line">// 加入过滤条件</div><div class="line">scala&gt; var intArray2=for(i&lt;-intArray if i&gt;2) yield i*2</div><div class="line">intArray2: Array[Int] = Array(6)</div></pre></td></tr></table></figure>
+<h2 id="常规用法"><a href="#常规用法" class="headerlink" title="常规用法"></a>常规用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//求和</div><div class="line">scala&gt; intArray.sum</div><div class="line">res8: Int = 6</div><div class="line">//求最小值</div><div class="line">scala&gt; intArray.min</div><div class="line">res9: Int = 1</div><div class="line">//求最大值</div><div class="line">scala&gt; intArray.max</div><div class="line">res10: Int = 3</div><div class="line">// make String</div><div class="line">scala&gt; intArray.mkString(&quot;,&quot;)</div><div class="line">res11: String = 1,2,3</div><div class="line">scala&gt; intArray.mkString(&quot;&lt;&quot;,&quot;,&quot;,&quot;&gt;&quot;)</div><div class="line">res12: String = &lt;1,2,3&gt;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第八节：Array的遍历-转换以及-常规用法/" data-id="cj1cv80h50009tguj2ictae1o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -348,12 +292,22 @@ object Test {
     <article id="post-第九节：List-以及常规用法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/name.github.io/2017/04/11/第九节：List-以及常规用法/" class="article-date">
-  <time datetime="2017-04-10T16:18:12.259Z" itemprop="datePublished">2017-04-11</time>
+  <time datetime="2017-04-10T16:13:09.000Z" itemprop="datePublished">2017-04-11</time>
 </a>
     
   </div>
   <div class="article-inner">
     
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/name.github.io/2017/04/11/第九节：List-以及常规用法/">第九节：List-以及常规用法</a>
+    </h1>
+  
+
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -369,7 +323,53 @@ object Test {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第九节：List-以及常规用法/" data-id="cj1cv1l1x0005ysuj0hk5mauq" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第九节：List-以及常规用法/" data-id="cj1cv80gq0006tgujbnh9g5pv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-第一节：scala简介" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/name.github.io/2017/04/11/第一节：scala简介/" class="article-date">
+  <time datetime="2017-04-10T16:13:09.000Z" itemprop="datePublished">2017-04-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/name.github.io/2017/04/11/第一节：scala简介/">第一节：scala简介</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>工作之后发现，学习的动力从大学的为学习而学习变成了现在的因需而学。多数情况下是为了更好的解决问题，或者单纯的为解决问题！本节的内容属于了解性质的都是从网上抄的！！</p>
+</blockquote>
+<h2 id="Scala简介"><a href="#Scala简介" class="headerlink" title="Scala简介"></a>Scala简介</h2><p><a href="http://lib.csdn.net/base/scala" target="_blank" rel="external">Scala</a>(Scala Language的简称)语言是一种能够运行于JVM和.Net平台之上的通用编程语言，既可用于大规模应用程序开发，也可用于脚本编程，它由由Martin Odersk于2001开发，2004年开始程序运行在JVM与.Net平台之上，由于其简洁、优雅、类型安全的编程模式而受到关注。 </p>
+<h2 id="Scala是怎么火的"><a href="#Scala是怎么火的" class="headerlink" title="Scala是怎么火的"></a>Scala是怎么火的</h2><p>在Scala的创建之初，并没有怎么引起重视，随着<a href="http://lib.csdn.net/base/spark" target="_blank" rel="external">Apache Spark</a>和Apache Kafka这样基于Scala的<a href="http://lib.csdn.net/base/hadoop" target="_blank" rel="external">大数据</a>框架的崛起，Scala逐步映入大数据从业者的眼帘</p>
+<h2 id="Scala的特点"><a href="#Scala的特点" class="headerlink" title="Scala的特点"></a>Scala的特点</h2><p>Scala 是一门多范式（multi-paradigm）的编程语言，设计初衷是要集成面向对象编程和函数式编程的各种特性。<br>Scala 运行在Java虚拟机上，并兼容现有的Java程序。<br>Scala 源代码被编译成Java字节码，所以它可以运行于JVM之上，并可以调用现有的Java类库</p>
+<h2 id="我为啥学Scala"><a href="#我为啥学Scala" class="headerlink" title="我为啥学Scala"></a>我为啥学Scala</h2><ul>
+<li>为了学习Spark（<em>当然学习Spark不一定需要学习Scala</em>）</li>
+<li>提高代码的表达性（<em>换个方式说为了减少敲得代码数量，因为Scala看起来真的很简练</em>）</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第一节：scala简介/" data-id="cj1cv80gq0002tguj8hbt3qf0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -405,7 +405,57 @@ object Test {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/aaa/" data-id="cj1cv1l1i0000ysujrlm04219" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/aaa/" data-id="cj1cv80ga0000tgujbd2e6jle" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-第二节：环境安装配置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/name.github.io/2017/04/11/第二节：环境安装配置/" class="article-date">
+  <time datetime="2017-04-10T16:13:09.000Z" itemprop="datePublished">2017-04-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/name.github.io/2017/04/11/第二节：环境安装配置/">第二节：环境安装配置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Scala是基于java之上，大量使用java的类库和变量，使用Scala之前必须先安装。我使用的jdk1.8  Scala2.12.1</p>
+</blockquote>
+<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><ul>
+<li>安装jdk1.8 </li>
+<li>配置 PATH，JAVA_HOME,CLASSPATH </li>
+</ul>
+<h2 id="下载scala"><a href="#下载scala" class="headerlink" title="下载scala"></a>下载scala</h2><ul>
+<li><p>接下来，我们可以从 Scala 官网地址<a href="http://www.scala-lang.org/download/" target="_blank" rel="external">下载地址</a>下载安装包<br><img src="http://upload-images.jianshu.io/upload_images/2888418-450d3560a5c1c1fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="下载"></p>
+</li>
+<li><p>点至下载的安装包进行安装。安装完成后配置环境变量  SCALA_HOME  （SCALA安装根目录） 以及PATH （SCALA的bin目录）</p>
+</li>
+</ul>
+<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><p> 当你正确的完成上述的步骤后，调出cmd 窗口，输入scala 然后回车你会看到一下界面。<br><img src="http://upload-images.jianshu.io/upload_images/2888418-d23b61909e8475c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="验证环境变量"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第二节：环境安装配置/" data-id="cj1cv80gq0005tgujpwgigp92" class="article-share-link">Share</a>
       
       
     </footer>
@@ -449,23 +499,23 @@ object Test {
       <ul>
         
           <li>
-            <a href="/name.github.io/2017/04/11/第八节：Array的遍历-转换以及-常规用法/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/name.github.io/2017/04/11/第一节：scala简介/">(no title)</a>
-          </li>
-        
-          <li>
             <a href="/name.github.io/2017/04/11/第四节：Scala-基础数据类型/">(no title)</a>
           </li>
         
           <li>
-            <a href="/name.github.io/2017/04/11/第二节：环境安装配置/">(no title)</a>
+            <a href="/name.github.io/2017/04/11/第五节：Scala-基本运算/">(no title)</a>
           </li>
         
           <li>
-            <a href="/name.github.io/2017/04/11/第五节：Scala-基本运算/">(no title)</a>
+            <a href="/name.github.io/2017/04/11/第三节：scala-基础语法/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/name.github.io/2017/04/11/第六节：判断与循环/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/name.github.io/2017/04/11/第七节：定长与变长Array/">第七节：定长与变长Array</a>
           </li>
         
       </ul>
@@ -480,7 +530,7 @@ object Test {
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 inerdstack<br>
+      &copy; 2017 Argus<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

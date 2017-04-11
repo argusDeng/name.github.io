@@ -68,9 +68,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-第二节：环境安装配置" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-第八节：Array的遍历-转换以及-常规用法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/name.github.io/2017/04/11/第二节：环境安装配置/" class="article-date">
+    <a href="/name.github.io/2017/04/11/第八节：Array的遍历-转换以及-常规用法/" class="article-date">
   <time datetime="2017-04-10T16:18:12.263Z" itemprop="datePublished">2017-04-11</time>
 </a>
     
@@ -80,58 +80,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>Scala是基于java之上，大量使用java的类库和变量，使用Scala之前必须先安装。我使用的jdk1.8  Scala2.12.1</p>
+        <h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">scala&gt; var intArray=Array(1,2,3)</div><div class="line">intArray: Array[Int] = Array(1, 2, 3)</div><div class="line"></div><div class="line">// to  length-1</div><div class="line">scala&gt; for(i&lt;- 0 to intArray.length-1)&#123;println(intArray(i))&#125;</div><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">// until  小于length</div><div class="line">scala&gt; for(i&lt;- 0 until intArray.length)&#123;println(intArray(i))&#125;</div><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">// 正确遍历数组的姿势</div><div class="line">scala&gt; for(i&lt;- intArray)&#123;println(i)&#125;</div><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">//倒叙遍历</div><div class="line">scala&gt; for(i&lt;- (0 until intArray.length).reverse)&#123;println(intArray(i))&#125;</div><div class="line"></div><div class="line">3</div><div class="line">2</div><div class="line">1</div></pre></td></tr></table></figure>
+<h2 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h2><blockquote>
+<p>Scala 中 for 循环是有返回值的。 for 循环中的 yield 会把当前的元素记下来，保存在集合中，循环结束后将返回该集合。</p>
 </blockquote>
-<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><ul>
-<li>安装jdk1.8 </li>
-<li>配置 PATH，JAVA_HOME,CLASSPATH </li>
-</ul>
-<h2 id="下载scala"><a href="#下载scala" class="headerlink" title="下载scala"></a>下载scala</h2><ul>
-<li><p>接下来，我们可以从 Scala 官网地址<a href="http://www.scala-lang.org/download/" target="_blank" rel="external">下载地址</a>下载安装包<br><img src="http://upload-images.jianshu.io/upload_images/2888418-450d3560a5c1c1fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="下载"></p>
-</li>
-<li><p>点至下载的安装包进行安装。安装完成后配置环境变量  SCALA_HOME  （SCALA安装根目录） 以及PATH （SCALA的bin目录）</p>
-</li>
-</ul>
-<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><p> 当你正确的完成上述的步骤后，调出cmd 窗口，输入scala 然后回车你会看到一下界面。<br><img src="http://upload-images.jianshu.io/upload_images/2888418-d23b61909e8475c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="验证环境变量"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//  生成新的数组原数组不变  </div><div class="line">scala&gt; var intArray=Array(1,2,3)</div><div class="line">intArray: Array[Int] = Array(1, 2, 3)</div><div class="line"></div><div class="line">scala&gt; for(i&lt;-intArray) yield i*2</div><div class="line">res6: Array[Int] = Array(2, 4, 6)</div><div class="line"></div><div class="line">scala&gt; intArray</div><div class="line">res7: Array[Int] = Array(1, 2, 3)</div><div class="line"></div><div class="line">scala&gt; var intArray2=for(i&lt;-intArray) yield i*2</div><div class="line">intArray2: Array[Int] = Array(2, 4, 6)</div><div class="line">// 加入过滤条件</div><div class="line">scala&gt; var intArray2=for(i&lt;-intArray if i&gt;2) yield i*2</div><div class="line">intArray2: Array[Int] = Array(6)</div></pre></td></tr></table></figure>
+<h2 id="常规用法"><a href="#常规用法" class="headerlink" title="常规用法"></a>常规用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//求和</div><div class="line">scala&gt; intArray.sum</div><div class="line">res8: Int = 6</div><div class="line">//求最小值</div><div class="line">scala&gt; intArray.min</div><div class="line">res9: Int = 1</div><div class="line">//求最大值</div><div class="line">scala&gt; intArray.max</div><div class="line">res10: Int = 3</div><div class="line">// make String</div><div class="line">scala&gt; intArray.mkString(&quot;,&quot;)</div><div class="line">res11: String = 1,2,3</div><div class="line">scala&gt; intArray.mkString(&quot;&lt;&quot;,&quot;,&quot;,&quot;&gt;&quot;)</div><div class="line">res12: String = &lt;1,2,3&gt;</div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第二节：环境安装配置/" data-id="cj1cutwii0005m0uj5tq0m19a" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-第四节：Scala-基础数据类型" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/name.github.io/2017/04/11/第四节：Scala-基础数据类型/" class="article-date">
-  <time datetime="2017-04-10T16:18:12.263Z" itemprop="datePublished">2017-04-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Byte	8位有符号补码整数。数值区间为 -128 到 127</div><div class="line">Short	16位有符号补码整数。数值区间为 -32768 到 32767</div><div class="line">Int	32位有符号补码整数。数值区间为 -2147483648 到 2147483647</div><div class="line">Long	64位有符号补码整数。数值区间为 -9223372036854775808 到 9223372036854775807</div><div class="line">Float	32位IEEE754单精度浮点数</div><div class="line">Double	64位IEEE754单精度浮点数</div><div class="line">Char	16位无符号Unicode字符, 区间值为 U+0000 到 U+FFFF</div><div class="line">String	字符序列</div><div class="line">Boolean	true或false</div></pre></td></tr></table></figure>
-<p>可以看出 scala 与java 中的类型基本上是一一对应的，不同的是 scala 中的字符类型首字母都是大写</p>
-<h2 id="定义整数"><a href="#定义整数" class="headerlink" title="定义整数"></a>定义整数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 16进制</div><div class="line">scala&gt; var x=0x29</div><div class="line">x: Int = 41</div><div class="line">//10进制</div><div class="line">scala&gt; var x=41</div><div class="line">x: Int = 41</div><div class="line">对于8进制 scala新的版本已经不支持了</div></pre></td></tr></table></figure>
-<h2 id="定义浮点类型数据"><a href="#定义浮点类型数据" class="headerlink" title="定义浮点类型数据"></a>定义浮点类型数据</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// 定义double类型数据 直接写浮点数就ok</div><div class="line">var fnum =3.141592</div><div class="line">fnum: Double = 3.141592</div><div class="line"></div><div class="line">//定义浮点类型数据 在浮点类型数据后跟F 或者f</div><div class="line">scala&gt; var fnum =3.141592f</div><div class="line">fnum: Float = 3.141592</div><div class="line"></div><div class="line">scala&gt; var fnum =3.141592F</div><div class="line">fnum: Float = 3.141592</div></pre></td></tr></table></figure>
-<h2 id="定义字符"><a href="#定义字符" class="headerlink" title="定义字符"></a>定义字符</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//字符用&apos; 包裹</div><div class="line">scala&gt; var x=&apos;a&apos;</div><div class="line">x: Char = a</div></pre></td></tr></table></figure>
-<h2 id="定义字符串"><a href="#定义字符串" class="headerlink" title="定义字符串"></a>定义字符串</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">字符串用&quot; 包裹</div><div class="line">scala&gt; var name=&quot;erhuan&quot;</div><div class="line">name: String = erhuan</div></pre></td></tr></table></figure>
-<h2 id="定义布尔类型"><a href="#定义布尔类型" class="headerlink" title="定义布尔类型"></a>定义布尔类型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">scala&gt; var win =true</div><div class="line">win: Boolean = true</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第四节：Scala-基础数据类型/" data-id="cj1cutwii000am0ujkkjwhsi8" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第八节：Array的遍历-转换以及-常规用法/" data-id="cj1cv1l2d000aysujn4pv8c3n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -167,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第一节：scala简介/" data-id="cj1cutwi30002m0ujnmkg58nb" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第一节：scala简介/" data-id="cj1cv1l1x0002ysuj9bztyt8j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -177,9 +136,9 @@
 
 
   
-    <article id="post-第八节：Array的遍历-转换以及-常规用法" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-第四节：Scala-基础数据类型" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/name.github.io/2017/04/11/第八节：Array的遍历-转换以及-常规用法/" class="article-date">
+    <a href="/name.github.io/2017/04/11/第四节：Scala-基础数据类型/" class="article-date">
   <time datetime="2017-04-10T16:18:12.263Z" itemprop="datePublished">2017-04-11</time>
 </a>
     
@@ -189,17 +148,58 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">scala&gt; var intArray=Array(1,2,3)</div><div class="line">intArray: Array[Int] = Array(1, 2, 3)</div><div class="line"></div><div class="line">// to  length-1</div><div class="line">scala&gt; for(i&lt;- 0 to intArray.length-1)&#123;println(intArray(i))&#125;</div><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">// until  小于length</div><div class="line">scala&gt; for(i&lt;- 0 until intArray.length)&#123;println(intArray(i))&#125;</div><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">// 正确遍历数组的姿势</div><div class="line">scala&gt; for(i&lt;- intArray)&#123;println(i)&#125;</div><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">//倒叙遍历</div><div class="line">scala&gt; for(i&lt;- (0 until intArray.length).reverse)&#123;println(intArray(i))&#125;</div><div class="line"></div><div class="line">3</div><div class="line">2</div><div class="line">1</div></pre></td></tr></table></figure>
-<h2 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h2><blockquote>
-<p>Scala 中 for 循环是有返回值的。 for 循环中的 yield 会把当前的元素记下来，保存在集合中，循环结束后将返回该集合。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//  生成新的数组原数组不变  </div><div class="line">scala&gt; var intArray=Array(1,2,3)</div><div class="line">intArray: Array[Int] = Array(1, 2, 3)</div><div class="line"></div><div class="line">scala&gt; for(i&lt;-intArray) yield i*2</div><div class="line">res6: Array[Int] = Array(2, 4, 6)</div><div class="line"></div><div class="line">scala&gt; intArray</div><div class="line">res7: Array[Int] = Array(1, 2, 3)</div><div class="line"></div><div class="line">scala&gt; var intArray2=for(i&lt;-intArray) yield i*2</div><div class="line">intArray2: Array[Int] = Array(2, 4, 6)</div><div class="line">// 加入过滤条件</div><div class="line">scala&gt; var intArray2=for(i&lt;-intArray if i&gt;2) yield i*2</div><div class="line">intArray2: Array[Int] = Array(6)</div></pre></td></tr></table></figure>
-<h2 id="常规用法"><a href="#常规用法" class="headerlink" title="常规用法"></a>常规用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//求和</div><div class="line">scala&gt; intArray.sum</div><div class="line">res8: Int = 6</div><div class="line">//求最小值</div><div class="line">scala&gt; intArray.min</div><div class="line">res9: Int = 1</div><div class="line">//求最大值</div><div class="line">scala&gt; intArray.max</div><div class="line">res10: Int = 3</div><div class="line">// make String</div><div class="line">scala&gt; intArray.mkString(&quot;,&quot;)</div><div class="line">res11: String = 1,2,3</div><div class="line">scala&gt; intArray.mkString(&quot;&lt;&quot;,&quot;,&quot;,&quot;&gt;&quot;)</div><div class="line">res12: String = &lt;1,2,3&gt;</div></pre></td></tr></table></figure>
+        <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Byte	8位有符号补码整数。数值区间为 -128 到 127</div><div class="line">Short	16位有符号补码整数。数值区间为 -32768 到 32767</div><div class="line">Int	32位有符号补码整数。数值区间为 -2147483648 到 2147483647</div><div class="line">Long	64位有符号补码整数。数值区间为 -9223372036854775808 到 9223372036854775807</div><div class="line">Float	32位IEEE754单精度浮点数</div><div class="line">Double	64位IEEE754单精度浮点数</div><div class="line">Char	16位无符号Unicode字符, 区间值为 U+0000 到 U+FFFF</div><div class="line">String	字符序列</div><div class="line">Boolean	true或false</div></pre></td></tr></table></figure>
+<p>可以看出 scala 与java 中的类型基本上是一一对应的，不同的是 scala 中的字符类型首字母都是大写</p>
+<h2 id="定义整数"><a href="#定义整数" class="headerlink" title="定义整数"></a>定义整数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 16进制</div><div class="line">scala&gt; var x=0x29</div><div class="line">x: Int = 41</div><div class="line">//10进制</div><div class="line">scala&gt; var x=41</div><div class="line">x: Int = 41</div><div class="line">对于8进制 scala新的版本已经不支持了</div></pre></td></tr></table></figure>
+<h2 id="定义浮点类型数据"><a href="#定义浮点类型数据" class="headerlink" title="定义浮点类型数据"></a>定义浮点类型数据</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// 定义double类型数据 直接写浮点数就ok</div><div class="line">var fnum =3.141592</div><div class="line">fnum: Double = 3.141592</div><div class="line"></div><div class="line">//定义浮点类型数据 在浮点类型数据后跟F 或者f</div><div class="line">scala&gt; var fnum =3.141592f</div><div class="line">fnum: Float = 3.141592</div><div class="line"></div><div class="line">scala&gt; var fnum =3.141592F</div><div class="line">fnum: Float = 3.141592</div></pre></td></tr></table></figure>
+<h2 id="定义字符"><a href="#定义字符" class="headerlink" title="定义字符"></a>定义字符</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//字符用&apos; 包裹</div><div class="line">scala&gt; var x=&apos;a&apos;</div><div class="line">x: Char = a</div></pre></td></tr></table></figure>
+<h2 id="定义字符串"><a href="#定义字符串" class="headerlink" title="定义字符串"></a>定义字符串</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">字符串用&quot; 包裹</div><div class="line">scala&gt; var name=&quot;erhuan&quot;</div><div class="line">name: String = erhuan</div></pre></td></tr></table></figure>
+<h2 id="定义布尔类型"><a href="#定义布尔类型" class="headerlink" title="定义布尔类型"></a>定义布尔类型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">scala&gt; var win =true</div><div class="line">win: Boolean = true</div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第八节：Array的遍历-转换以及-常规用法/" data-id="cj1cutwii0009m0ujhsoby5dt" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第四节：Scala-基础数据类型/" data-id="cj1cv1l2d0009ysuj84qosboz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-第二节：环境安装配置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/name.github.io/2017/04/11/第二节：环境安装配置/" class="article-date">
+  <time datetime="2017-04-10T16:18:12.263Z" itemprop="datePublished">2017-04-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Scala是基于java之上，大量使用java的类库和变量，使用Scala之前必须先安装。我使用的jdk1.8  Scala2.12.1</p>
+</blockquote>
+<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><ul>
+<li>安装jdk1.8 </li>
+<li>配置 PATH，JAVA_HOME,CLASSPATH </li>
+</ul>
+<h2 id="下载scala"><a href="#下载scala" class="headerlink" title="下载scala"></a>下载scala</h2><ul>
+<li><p>接下来，我们可以从 Scala 官网地址<a href="http://www.scala-lang.org/download/" target="_blank" rel="external">下载地址</a>下载安装包<br><img src="http://upload-images.jianshu.io/upload_images/2888418-450d3560a5c1c1fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="下载"></p>
+</li>
+<li><p>点至下载的安装包进行安装。安装完成后配置环境变量  SCALA_HOME  （SCALA安装根目录） 以及PATH （SCALA的bin目录）</p>
+</li>
+</ul>
+<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><p> 当你正确的完成上述的步骤后，调出cmd 窗口，输入scala 然后回车你会看到一下界面。<br><img src="http://upload-images.jianshu.io/upload_images/2888418-d23b61909e8475c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="验证环境变量"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第二节：环境安装配置/" data-id="cj1cv1l1x0006ysuj7gbu9smf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -229,7 +229,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第五节：Scala-基本运算/" data-id="cj1cutwii0006m0uj73twdms2" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第五节：Scala-基本运算/" data-id="cj1cv1l1x0007ysuj877ipl9u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -272,7 +272,7 @@ object Test {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第三节：scala-基础语法/" data-id="cj1cutwi30001m0ujvolwctdx" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第三节：scala-基础语法/" data-id="cj1cv1l1x0004ysujpqfadl8h" class="article-share-link">Share</a>
       
       
     </footer>
@@ -304,7 +304,7 @@ object Test {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第七节：定长与变长Array/" data-id="cj1cutwi30004m0ujule53uka" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第七节：定长与变长Array/" data-id="cj1cv1l1x0003ysujbelo05ua" class="article-share-link">Share</a>
       
       
     </footer>
@@ -335,7 +335,7 @@ object Test {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第六节：判断与循环/" data-id="cj1cutwii0008m0ujuh26t6rq" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第六节：判断与循环/" data-id="cj1cv1l2d0008ysujbdyvpm4x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -369,7 +369,7 @@ object Test {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第九节：List-以及常规用法/" data-id="cj1cutwii0007m0uj6qrc5sdt" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/第九节：List-以及常规用法/" data-id="cj1cv1l1x0005ysuj0hk5mauq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -405,7 +405,7 @@ object Test {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/aaa/" data-id="cj1cutwi30000m0ujr3t9ojuv" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/11/aaa/" data-id="cj1cv1l1i0000ysujrlm04219" class="article-share-link">Share</a>
       
       
     </footer>
@@ -449,11 +449,7 @@ object Test {
       <ul>
         
           <li>
-            <a href="/name.github.io/2017/04/11/第二节：环境安装配置/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/name.github.io/2017/04/11/第四节：Scala-基础数据类型/">(no title)</a>
+            <a href="/name.github.io/2017/04/11/第八节：Array的遍历-转换以及-常规用法/">(no title)</a>
           </li>
         
           <li>
@@ -461,7 +457,11 @@ object Test {
           </li>
         
           <li>
-            <a href="/name.github.io/2017/04/11/第八节：Array的遍历-转换以及-常规用法/">(no title)</a>
+            <a href="/name.github.io/2017/04/11/第四节：Scala-基础数据类型/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/name.github.io/2017/04/11/第二节：环境安装配置/">(no title)</a>
           </li>
         
           <li>

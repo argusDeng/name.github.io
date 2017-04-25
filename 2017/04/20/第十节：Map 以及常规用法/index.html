@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>第十节：Map 以及常规用法 | Argus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="创建map12345scala&amp;gt; val map = Map(&amp;quot;name&amp;quot;-&amp;gt;&amp;quot;erhuan&amp;quot;,&amp;quot;age&amp;quot;-&amp;gt;20)map: scala.collection.immutable.Map[String,Any] = Map(name -&amp;gt; erhuan, age -&amp;gt; 20)//等效于scala&amp;gt; va">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第十节：Map 以及常规用法">
+<meta property="og:url" content="https://argusdeng.github.io/name.github.io/2017/04/20/第十节：Map 以及常规用法/index.html">
+<meta property="og:site_name" content="Argus">
+<meta property="og:description" content="创建map12345scala&amp;gt; val map = Map(&amp;quot;name&amp;quot;-&amp;gt;&amp;quot;erhuan&amp;quot;,&amp;quot;age&amp;quot;-&amp;gt;20)map: scala.collection.immutable.Map[String,Any] = Map(name -&amp;gt; erhuan, age -&amp;gt; 20)//等效于scala&amp;gt; va">
+<meta property="og:updated_time" content="2017-04-25T15:30:08.748Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第十节：Map 以及常规用法">
+<meta name="twitter:description" content="创建map12345scala&amp;gt; val map = Map(&amp;quot;name&amp;quot;-&amp;gt;&amp;quot;erhuan&amp;quot;,&amp;quot;age&amp;quot;-&amp;gt;20)map: scala.collection.immutable.Map[String,Any] = Map(name -&amp;gt; erhuan, age -&amp;gt; 20)//等效于scala&amp;gt; va">
+  
+    <link rel="alternate" href="/atom.xml" title="Argus" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/name.github.io/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/name.github.io/" id="logo">Argus</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/name.github.io/" id="subtitle">become hero</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/name.github.io/">Home</a>
+        
+          <a class="main-nav-link" href="/name.github.io/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://argusdeng.github.io/name.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-第十节：Map 以及常规用法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/name.github.io/2017/04/20/第十节：Map 以及常规用法/" class="article-date">
+  <time datetime="2017-04-19T16:13:09.000Z" itemprop="datePublished">2017-04-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      第十节：Map 以及常规用法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="创建map"><a href="#创建map" class="headerlink" title="创建map"></a>创建map</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">scala&gt; val map = Map(&quot;name&quot;-&gt;&quot;erhuan&quot;,&quot;age&quot;-&gt;20)</div><div class="line">map: scala.collection.immutable.Map[String,Any] = Map(name -&gt; erhuan, age -&gt; 20)</div><div class="line">//等效于</div><div class="line">scala&gt; val map = Map((&quot;name&quot;,&quot;erhuan&quot;),(&quot;age&quot;-&gt;20))</div><div class="line">map: scala.collection.immutable.Map[String,Any] = Map(name -&gt; erhuan, age -&gt; 20)</div></pre></td></tr></table></figure>
+<h1 id="创建可变map"><a href="#创建可变map" class="headerlink" title="创建可变map"></a>创建可变map</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">scala&gt; val map = scala.collection.mutable.Map(&quot;name&quot;-&gt;&quot;erhuan&quot;,&quot;age&quot;-&gt;20)</div><div class="line">map: scala.collection.mutable.Map[String,Any] = Map(age -&gt; 20, name -&gt; erhuan)</div></pre></td></tr></table></figure>
+<h1 id="获取map中的值"><a href="#获取map中的值" class="headerlink" title="获取map中的值"></a>获取map中的值</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">scala&gt; val name=map(&quot;name&quot;)</div><div class="line">name: Any = erhuan</div><div class="line"></div><div class="line">//查看map是否包含某个key</div><div class="line">scala&gt; if(map.contains(&quot;name&quot;)) map(&quot;name&quot;)</div><div class="line">res0: Any = erhuan</div></pre></td></tr></table></figure>
+<h1 id="更新map"><a href="#更新map" class="headerlink" title="更新map"></a>更新map</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//更新值</div><div class="line">scala&gt; map(&quot;name&quot;)=&quot;lilin&quot;</div><div class="line"></div><div class="line">scala&gt; map</div><div class="line">res2: scala.collection.mutable.Map[String,Any] = Map(age -&gt; 20, name -&gt; lilin)</div><div class="line">//添加键值对</div><div class="line">scala&gt; map+=(&quot;tall&quot;-&gt;1.5)</div><div class="line">res4: map.type = Map(tall -&gt; 1.5, age -&gt; 20, name -&gt; lilin)</div><div class="line">//删除键值对</div><div class="line">scala&gt; map-=(&quot;tall&quot;)</div><div class="line">res5: map.type = Map(age -&gt; 20, name -&gt; lilin)</div></pre></td></tr></table></figure>
+<h1 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// 遍历所有</div><div class="line">scala&gt; for((k,v)&lt;-map)&#123;println(k+&quot;=&quot;+name)&#125;</div><div class="line">age=erhuan</div><div class="line">name=erhuan</div><div class="line">//便利key</div><div class="line">scala&gt; map.keySet</div><div class="line">res10: scala.collection.Set[String] = Set(age, name)</div><div class="line">//遍历values</div><div class="line">scala&gt; for(v &lt;-map.values) println(v)</div><div class="line">20</div><div class="line">lilin</div><div class="line">// k v反转</div><div class="line">scala&gt; for((k,v)&lt;-map) yield(v,k)</div><div class="line">res12: scala.collection.mutable.Map[Any,String] = Map(20 -&gt; age, lilin -&gt; name)</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/20/第十节：Map 以及常规用法/" data-id="cj1xpmbg30008osujhqix4gx8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/name.github.io/2017/04/09/第九节：List-以及常规用法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          第九节：List-以及常规用法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/name.github.io/2017/04/21/第十一节：元组  Tuple3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">第十一节：元组  Tuple3</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/name.github.io/archives/2017/04/">四月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/name.github.io/2017/04/21/第十一节：元组  Tuple3/">第十一节：元组  Tuple3</a>
+          </li>
+        
+          <li>
+            <a href="/name.github.io/2017/04/20/第十节：Map 以及常规用法/">第十节：Map 以及常规用法</a>
+          </li>
+        
+          <li>
+            <a href="/name.github.io/2017/04/09/第九节：List-以及常规用法/">第九节：List-以及常规用法</a>
+          </li>
+        
+          <li>
+            <a href="/name.github.io/2017/04/08/第八节：Array的遍历-转换以及-常规用法/">第八节：Array的遍历-转换以及-常规用法</a>
+          </li>
+        
+          <li>
+            <a href="/name.github.io/2017/04/07/第七节：定长与变长Array/">第七节：定长与变长Array</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Argus<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/name.github.io/" class="mobile-nav-link">Home</a>
+  
+    <a href="/name.github.io/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/name.github.io/fancybox/jquery.fancybox.css">
+  <script src="/name.github.io/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/name.github.io/js/script.js"></script>
+
+  </div>
+</body>
+</html>

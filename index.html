@@ -68,6 +68,85 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-第十一节：元组  Tuple3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/name.github.io/2017/04/21/第十一节：元组  Tuple3/" class="article-date">
+  <time datetime="2017-04-20T16:13:09.000Z" itemprop="datePublished">2017-04-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/name.github.io/2017/04/21/第十一节：元组  Tuple3/">第十一节：元组  Tuple3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="创建元组"><a href="#创建元组" class="headerlink" title="创建元组"></a>创建元组</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">scala&gt; val t = (1, &quot;hello&quot;, Console)</div><div class="line">t: (Int, String, Console.type) = (1,hello,scala.Console$@47b530e0)</div><div class="line"></div><div class="line">scala&gt; val t = new Tuple3(1, &quot;hello&quot;, Console)</div><div class="line">t: (Int, String, Console.type) = (1,hello,scala.Console$@47b530e0)</div></pre></td></tr></table></figure>
+<h1 id="获取元组中的数据"><a href="#获取元组中的数据" class="headerlink" title="获取元组中的数据"></a>获取元组中的数据</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">scala&gt; t._1+t._2</div><div class="line">res13: String = 1hello</div></pre></td></tr></table></figure>
+<h1 id="遍历元组"><a href="#遍历元组" class="headerlink" title="遍历元组"></a>遍历元组</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">scala&gt; t.productIterator.foreach(i=&gt;println(i))</div><div class="line">1</div><div class="line">hello</div><div class="line">scala.Console$@47b530e0</div></pre></td></tr></table></figure>
+<h1 id="转化成String"><a href="#转化成String" class="headerlink" title="转化成String"></a>转化成String</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">scala&gt; t.toString()</div><div class="line">res15: String = (1,hello,scala.Console$@47b530e0)</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/21/第十一节：元组  Tuple3/" data-id="cj1xpmbfn0005osujj9c7xbui" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-第十节：Map 以及常规用法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/name.github.io/2017/04/20/第十节：Map 以及常规用法/" class="article-date">
+  <time datetime="2017-04-19T16:13:09.000Z" itemprop="datePublished">2017-04-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/name.github.io/2017/04/20/第十节：Map 以及常规用法/">第十节：Map 以及常规用法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="创建map"><a href="#创建map" class="headerlink" title="创建map"></a>创建map</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">scala&gt; val map = Map(&quot;name&quot;-&gt;&quot;erhuan&quot;,&quot;age&quot;-&gt;20)</div><div class="line">map: scala.collection.immutable.Map[String,Any] = Map(name -&gt; erhuan, age -&gt; 20)</div><div class="line">//等效于</div><div class="line">scala&gt; val map = Map((&quot;name&quot;,&quot;erhuan&quot;),(&quot;age&quot;-&gt;20))</div><div class="line">map: scala.collection.immutable.Map[String,Any] = Map(name -&gt; erhuan, age -&gt; 20)</div></pre></td></tr></table></figure>
+<h1 id="创建可变map"><a href="#创建可变map" class="headerlink" title="创建可变map"></a>创建可变map</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">scala&gt; val map = scala.collection.mutable.Map(&quot;name&quot;-&gt;&quot;erhuan&quot;,&quot;age&quot;-&gt;20)</div><div class="line">map: scala.collection.mutable.Map[String,Any] = Map(age -&gt; 20, name -&gt; erhuan)</div></pre></td></tr></table></figure>
+<h1 id="获取map中的值"><a href="#获取map中的值" class="headerlink" title="获取map中的值"></a>获取map中的值</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">scala&gt; val name=map(&quot;name&quot;)</div><div class="line">name: Any = erhuan</div><div class="line"></div><div class="line">//查看map是否包含某个key</div><div class="line">scala&gt; if(map.contains(&quot;name&quot;)) map(&quot;name&quot;)</div><div class="line">res0: Any = erhuan</div></pre></td></tr></table></figure>
+<h1 id="更新map"><a href="#更新map" class="headerlink" title="更新map"></a>更新map</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//更新值</div><div class="line">scala&gt; map(&quot;name&quot;)=&quot;lilin&quot;</div><div class="line"></div><div class="line">scala&gt; map</div><div class="line">res2: scala.collection.mutable.Map[String,Any] = Map(age -&gt; 20, name -&gt; lilin)</div><div class="line">//添加键值对</div><div class="line">scala&gt; map+=(&quot;tall&quot;-&gt;1.5)</div><div class="line">res4: map.type = Map(tall -&gt; 1.5, age -&gt; 20, name -&gt; lilin)</div><div class="line">//删除键值对</div><div class="line">scala&gt; map-=(&quot;tall&quot;)</div><div class="line">res5: map.type = Map(age -&gt; 20, name -&gt; lilin)</div></pre></td></tr></table></figure>
+<h1 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// 遍历所有</div><div class="line">scala&gt; for((k,v)&lt;-map)&#123;println(k+&quot;=&quot;+name)&#125;</div><div class="line">age=erhuan</div><div class="line">name=erhuan</div><div class="line">//便利key</div><div class="line">scala&gt; map.keySet</div><div class="line">res10: scala.collection.Set[String] = Set(age, name)</div><div class="line">//遍历values</div><div class="line">scala&gt; for(v &lt;-map.values) println(v)</div><div class="line">20</div><div class="line">lilin</div><div class="line">// k v反转</div><div class="line">scala&gt; for((k,v)&lt;-map) yield(v,k)</div><div class="line">res12: scala.collection.mutable.Map[Any,String] = Map(20 -&gt; age, lilin -&gt; name)</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/20/第十节：Map 以及常规用法/" data-id="cj1xpmbg30008osujhqix4gx8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-第九节：List-以及常规用法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/name.github.io/2017/04/09/第九节：List-以及常规用法/" class="article-date">
@@ -102,7 +181,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/09/第九节：List-以及常规用法/" data-id="cj1cvpa3x0003aguj0ea18l08" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/09/第九节：List-以及常规用法/" data-id="cj1xpmbfn0002osujbe9nm4ln" class="article-share-link">Share</a>
       
       
     </footer>
@@ -144,7 +223,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/08/第八节：Array的遍历-转换以及-常规用法/" data-id="cj1cvpa3x0006agujgx4r1870" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/08/第八节：Array的遍历-转换以及-常规用法/" data-id="cj1xpmbg30007osuj15fiu1a3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -186,7 +265,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/07/第七节：定长与变长Array/" data-id="cj1cvpa3h0001aguj1o24yvnq" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/07/第七节：定长与变长Array/" data-id="cj1xpmbfn0003osujjvr4vwms" class="article-share-link">Share</a>
       
       
     </footer>
@@ -227,7 +306,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/06/第六节：判断与循环/" data-id="cj1cvpa3x0007agujc6cy74yh" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/06/第六节：判断与循环/" data-id="cj1xpmbg30009osujoapdeq7s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -267,7 +346,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/05/第五节：Scala-基本运算/" data-id="cj1cvpa3x0005aguj85qq83ev" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/05/第五节：Scala-基本运算/" data-id="cj1xpmbfn0006osuj0zema5z1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -310,7 +389,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/04/第四节：Scala-基础数据类型/" data-id="cj1cvpa3x0008agujtfrjw93k" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/04/第四节：Scala-基础数据类型/" data-id="cj1xpmbg3000aosujomubyx5j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -363,7 +442,7 @@ object Test {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/03/第三节：scala-基础语法/" data-id="cj1cvpa3h0002agujzwjyku3n" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/03/第三节：scala-基础语法/" data-id="cj1xpmbfn0001osuj9mbw0wtq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -413,53 +492,7 @@ object Test {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/02/第二节：环境安装配置/" data-id="cj1cvpa3x0004aguj2eo4dqqp" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-第一节：scala简介" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/name.github.io/2017/04/01/第一节：scala简介/" class="article-date">
-  <time datetime="2017-03-31T16:13:09.000Z" itemprop="datePublished">2017-04-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/name.github.io/2017/04/01/第一节：scala简介/">第一节：scala简介</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>工作之后发现，学习的动力从大学的为学习而学习变成了现在的因需而学。多数情况下是为了更好的解决问题，或者单纯的为解决问题！本节的内容属于了解性质的都是从网上抄的！！</p>
-</blockquote>
-<h2 id="Scala简介"><a href="#Scala简介" class="headerlink" title="Scala简介"></a>Scala简介</h2><p><a href="http://lib.csdn.net/base/scala" target="_blank" rel="external">Scala</a>(Scala Language的简称)语言是一种能够运行于JVM和.Net平台之上的通用编程语言，既可用于大规模应用程序开发，也可用于脚本编程，它由由Martin Odersk于2001开发，2004年开始程序运行在JVM与.Net平台之上，由于其简洁、优雅、类型安全的编程模式而受到关注。 </p>
-<h2 id="Scala是怎么火的"><a href="#Scala是怎么火的" class="headerlink" title="Scala是怎么火的"></a>Scala是怎么火的</h2><p>在Scala的创建之初，并没有怎么引起重视，随着<a href="http://lib.csdn.net/base/spark" target="_blank" rel="external">Apache Spark</a>和Apache Kafka这样基于Scala的<a href="http://lib.csdn.net/base/hadoop" target="_blank" rel="external">大数据</a>框架的崛起，Scala逐步映入大数据从业者的眼帘</p>
-<h2 id="Scala的特点"><a href="#Scala的特点" class="headerlink" title="Scala的特点"></a>Scala的特点</h2><p>Scala 是一门多范式（multi-paradigm）的编程语言，设计初衷是要集成面向对象编程和函数式编程的各种特性。<br>Scala 运行在Java虚拟机上，并兼容现有的Java程序。<br>Scala 源代码被编译成Java字节码，所以它可以运行于JVM之上，并可以调用现有的Java类库</p>
-<h2 id="我为啥学Scala"><a href="#我为啥学Scala" class="headerlink" title="我为啥学Scala"></a>我为啥学Scala</h2><ul>
-<li>为了学习Spark（<em>当然学习Spark不一定需要学习Scala</em>）</li>
-<li>提高代码的表达性（<em>换个方式说为了减少敲得代码数量，因为Scala看起来真的很简练</em>）</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/01/第一节：scala简介/" data-id="cj1cvpa3h0000aguja44jhxra" class="article-share-link">Share</a>
+      <a data-url="https://argusdeng.github.io/name.github.io/2017/04/02/第二节：环境安装配置/" data-id="cj1xpmbfn0004osujsb6sk963" class="article-share-link">Share</a>
       
       
     </footer>
@@ -470,6 +503,10 @@ object Test {
 
   
 
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/name.github.io/page/2/">2</a><a class="extend next" rel="next" href="/name.github.io/page/2/">__('next') &raquo;</a>
+  </nav>
 </section>
         
           <aside id="sidebar">
@@ -499,6 +536,14 @@ object Test {
       <ul>
         
           <li>
+            <a href="/name.github.io/2017/04/21/第十一节：元组  Tuple3/">第十一节：元组  Tuple3</a>
+          </li>
+        
+          <li>
+            <a href="/name.github.io/2017/04/20/第十节：Map 以及常规用法/">第十节：Map 以及常规用法</a>
+          </li>
+        
+          <li>
             <a href="/name.github.io/2017/04/09/第九节：List-以及常规用法/">第九节：List-以及常规用法</a>
           </li>
         
@@ -508,14 +553,6 @@ object Test {
         
           <li>
             <a href="/name.github.io/2017/04/07/第七节：定长与变长Array/">第七节：定长与变长Array</a>
-          </li>
-        
-          <li>
-            <a href="/name.github.io/2017/04/06/第六节：判断与循环/">第六节：判断与循环</a>
-          </li>
-        
-          <li>
-            <a href="/name.github.io/2017/04/05/第五节：Scala-基本运算/">第五节：Scala-基本运算</a>
           </li>
         
       </ul>
